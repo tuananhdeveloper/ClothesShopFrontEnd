@@ -1,0 +1,42 @@
+<section>
+    <div class="spacer">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-lg-9">
+            <div class="row shop-listing">
+              <table class="table shop-table" *ngIf="carts">
+                <tr>
+                  <th class="b-0">Name</th>
+                  <th class="b-0">Price</th>
+                  <th class="b-0">Quantity</th>
+                  <th class="b-0 ">Total Price</th>
+                  <th class="b-0"></th>
+                </tr>
+                <tr *ngFor="let item of carts">
+                  <td>{{ item.product.name }}</td>
+                  <td>{{ item.product.price}}</td>
+                  <td>
+                    <button class="btn btn-primary btn-sm" (click)="_increamentQTY(item.id, item.product.price, item.quantity+1)">+</button>
+                    {{ item.quantity }}
+                    <button class="btn btn-primary btn-sm" (click)="_descreamentQTY(item.id, item.product.price, item.quantity-1)">-</button>
+                  </td>
+                  <td>
+                    <h5 class="font-medium m-b-30">{{ item.price }}</h5>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger btn-sm" (click)="deleteItem(item.id)">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" align="right">Subtotal :{{subTotal }}</td>
+                  <td colspan="4" align="right">
+                    <button class="btn btn-danger" (click)="_emptyCart()">Empty Cart</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

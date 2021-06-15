@@ -1,0 +1,26 @@
+<div class="header">
+    <h1 style>Đăng ký</h1>
+</div>
+
+<div>
+    <form style="width: 40%; margin: 0 auto;"  [formGroup]="form">
+        <div>
+            <mat-form-field>
+                <input matInput
+                        placeholder="Tài khoản"
+                       formControlName="loginId">
+            </mat-form-field> 
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput
+                        placeholder="Mật khẩu"
+                       formControlName="password">
+            </mat-form-field> 
+        </div>
+
+
+        <!-- Submit button -->
+        <button  class="btn btn-primary" (click)="register()">Đăng ký</button>
+    </form>
+</div>

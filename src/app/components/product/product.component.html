@@ -1,0 +1,29 @@
+<section>
+    <div class="spacer">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-lg-9" style="margin: 0 auto">
+            <div class="row shop-listing">
+              <div class="col-lg-3" *ngFor="let product of products">
+                <div class="card shop-hover border-0">
+                  <img src="{{product.image}}" alt="wrapkit" class="img-fluid" style="width: 200px; height: 200px;"/>
+                  <div class="card-img-overlay align-items-center">
+                    <button class="btn btn-md btn-info" (click)="addItemToCart(product.id, product.price)">Add to Cart</button>
+                  </div>
+                </div>
+                <div class="card border-0">
+                  <h3>
+                    <a href="#" class="link">{{ product.name }}</a>
+                  </h3>
+                  <h6 class="subtitle"></h6>
+                  <h5 class="font-medium m-b-30">
+                    {{product.price}} VNĐ
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
